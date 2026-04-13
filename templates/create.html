@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizazo Create</title>
+    <script defer src="{{ url_for('static', filename='create.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='create.css') }}">
+</head>
+<body>
+<h1>Create</h1>
+<form method="POST" action = "{{url_for('add_data')}}">
+    <label for="setname">Name: </label><input id="setname" name="name">
+    <div id = "cards">
+    <div id = "card">
+    </div>
+    </div>
+    <br>
+    <button id ="addcard" type="button">+</button>
+    <input type="submit" value = "Submit" id ="submitButton" disabled>
+</form>
+</body>
+</html>
