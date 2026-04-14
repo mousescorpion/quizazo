@@ -10,6 +10,7 @@
 <h1>Create</h1>
 <form method="POST" action = "{{url_for('add_data')}}">
     <label for="setname">Name: </label><input id="setname" name="name">
+    <label for="setdescription">Description: </label><input id="setdescription" name="description">
     <div id = "cards">
     <div id = "card">
     </div>
@@ -17,6 +18,7 @@
     <br>
     <button id ="addcard" type="button">+</button>
     <input type="submit" value = "Submit" id ="submitButton" disabled>
+    <div id = "nameInUseError" style="visibility: hidden;">*set name is taken*</div>
 </form>
 </body>
 </html>

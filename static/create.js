@@ -11,8 +11,28 @@ let cardIndex2=0
 var cardList=[cardOne]
 createNewCard(cardOne)
 
-name.addEventListener("input", e=>{
+const submit=document.querySelector("#submitButton")
+const nameError=document.querySelector("#nameInUseError")
 
+name.addEventListener("input", async (e)=>{
+    submit.disabled=true
+    nameError.style.visibility="hidden"
+    if(name.value!=""){
+        try {
+        const response = await fetch(`/create/get_name/${name.value}`, {method: "GET", headers: {'Content-Type': 'application/json'},});
+        if (!response.ok) throw new Error('Network response was not ok');
+
+        const data = await response.text();
+        if(data=="T"){
+            submit.disabled=false
+        }else{
+            nameError.style.visibility="visible"
+        }
+      }
+        catch (error) {
+        console.error('Fetch error:', error);
+      }
+    }
 })
 
 function createNewCard(card){

@@ -13,20 +13,34 @@ def home():
 def create():
     return render_template('create.html')
 
+@app.route('/create/get_name/<the_name>',methods=['GET'])
+def get_name(the_name):
+    print(the_name)
+    key=datastore_client.key("Name", the_name)
+    if datastore_client.get(key) is None:
+        return "T"
+    return "F"
+
+
 @app.route('/create/add_data',methods=['POST', 'GET'])
 def add_data():
     name="noName"
+    description="no description"
     data={}
     for key, value in request.form.items():
         if key=="name":
-            print(value)
             name=value
+        elif key== "description":
+            description=value
         else:
-            print(key+", "+value)
             data.update({key: value})
-    # key = datastore_client.key(name)
-    # entity=datastore.Entity(key=key)
-    # entity.update({name:data})
+    key = datastore_client.key("Name", name)
+    entity=datastore.Entity(key=key)
+    entity.update({
+        'name': name,
+        'description': description
+    })
+    datastore_client.put(entity)
     return render_template('home.html')
 
 if __name__ == '__main__':
