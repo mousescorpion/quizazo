@@ -11,5 +11,17 @@
 <form>
 <input type="text" id ="searchName" name="searchName">
 </form>
+{% block content %}
+{% if sets %}
+    {% for cardset in sets %}
+        <div class="set">
+            <h3><a href="{{ url_for('view_set', set_id=cardset['name']) }}">{{ cardset.name }}</a></h3>
+            <p>{{ cardset.description[:100] }}{% if cardset.description|length > 100 %}...{% endif %}</p>
+        </div>
+    {% endfor %}
+{% else %}
+<p>No sets yet.</p>
+{% endif %}
+{% endblock %}
 </body>
 </html>
