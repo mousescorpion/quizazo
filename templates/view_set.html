@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>View set</title>
 </head>
 <body>
-<h1>{{item.name}}</h1>
-<h3>{{item.description}}</h3>
-<h4><a href="{{ url_for('flashcards', set_id=cardset['name']) }}"></a></h4>
+<a href="/">return</a>
+<h1>{{cardset.name}}</h1>
+<h3>{{cardset.description}}</h3>
+<h4><a href="{{ url_for('flashcards', set_id=cardset['name']) }}">start study</a></h4>
 </body>
 </html>

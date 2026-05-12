@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flashcards</title>
+    <style></style>
+    <script type="text/javascript">
+        const data_json = {{cardset.data|tojson}}
+        const lengths_json = {{cardset.lengths|tojson}}
+        const name = {{cardset.name|tojson}}
+    </script>
+    <script defer src="{{ url_for('static', filename='flashcards.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='flashcardsstyle.css') }}">
+</head>
+<body>
+<div id="questions_box">
+    <h1 id = "prompt"></h1>
+    <div id = "answers" class="container"></div>
+    <br>
+    <button id = "next">Next</button>
+</div>
+</body>
+</html>
