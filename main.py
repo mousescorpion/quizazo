@@ -24,13 +24,13 @@ client_secrets_file=os.path.join(pathlib.Path(__file__).parent, "client_secret.j
 flow = Flow.from_client_secrets_file(
     client_secrets_file=client_secrets_file,
     scopes=["openid","https://www.googleapis.com/auth/userinfo.email"],
-    redirect_uri="http://localhost:5000/callback"
+    redirect_uri="http://127.0.0.1:5000/callback"
 )
 
 @app.route('/login')
 def login():
     authorization_url, state=flow.authorization_url()
-    session['state'] = state
+    session["state"] = state
     return redirect(authorization_url)
 
 
@@ -38,7 +38,11 @@ def login():
 def callback():
     flow.fetch_token(authorization_response=request.url)
 
-    if not session['state']==request.args['state']:
+    save_state=session.get("state")
+    return_state=request.args.get("state")
+    if not save_state:
+        return redirect(url_for("login"))
+    if not save_state==return_state:
         abort(500)
 
     credentials=flow.credentials

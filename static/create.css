@@ -1,7 +1,222 @@
+/* ===== GLOBAL ===== */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, #2b1055, #1a1a2e 40%),
+        linear-gradient(135deg, #16213e, #0f3460);
+    color: white;
+    padding: 40px;
+}
+
+/* ===== TITLE ===== */
+
+h1{
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+
+    background: linear-gradient(90deg,#00e5ff,#7b61ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    letter-spacing: 2px;
+}
+
+/* ===== FORM ===== */
+
+form{
+    max-width: 1000px;
+    margin: auto;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    padding: 30px;
+    border-radius: 24px;
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* ===== INPUTS ===== */
+
+label{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #d0d0ff;
+}
+
+input,
+select{
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    background: rgba(255,255,255,0.08);
+    color: white;
+
+    outline: none;
+
+    transition:
+        border 0.25s ease,
+        transform 0.2s ease,
+        background 0.25s ease;
+}
+
+input:focus,
+select:focus{
+    border-color: #7b61ff;
+    background: rgba(255,255,255,0.12);
+    transform: scale(1.01);
+}
+
+select{
+    appearance:none;
+}
+
+/* ===== CARD CONTAINER ===== */
+
+#cards{
+    margin-top: 30px;
+}
+
+/* ===== CARD ===== */
+
 .carrier{
-    margin: 3px;
-    padding: 3px;
-    border: 2px solid;
-    border-color: rgba(200,200,200,0.3);
-    border-radius: 2px;
+    margin-top: 20px;
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 4px 18px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.carrier:hover{
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,0.35);
+}
+
+/* ===== ATTRIBUTE ROWS ===== */
+
+.carrier > div > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 180px;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+/* ===== BUTTONS ===== */
+
+button,
+input[type="submit"]{
+    border: none;
+    border-radius: 14px;
+
+    padding: 12px 18px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+/* ADD BUTTON */
+
+#addcard,
+button[type="button"]{
+    background: linear-gradient(135deg,#00c6ff,#0072ff);
+    color: white;
+
+    box-shadow:
+        0 4px 14px rgba(0,114,255,0.4);
+}
+
+#addcard{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 2rem;
+
+    margin-top: 20px;
+}
+
+button:hover,
+input[type="submit"]:hover{
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* SUBMIT */
+
+#submitButton{
+    margin-top: 25px;
+    width: 100%;
+
+    background: linear-gradient(135deg,#7b61ff,#b224ef);
+    color: white;
+
+    box-shadow:
+        0 4px 14px rgba(123,97,255,0.4);
+}
+
+#submitButton:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== ERROR TEXT ===== */
+
+#nameInUseError,
+#essentialError{
+    margin-top: 12px;
+    color: #ff6b81;
+    font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width: 700px){
+
+    .carrier > div > div{
+        grid-template-columns: 1fr;
+    }
+
+    body{
+        padding: 18px;
+    }
+
+    h1{
+        font-size: 2.2rem;
+    }
 }

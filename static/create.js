@@ -42,13 +42,13 @@ function createNewCard(card){
     const addButton = document.createElement("button")
     const endCard = document.createElement("div")
     endCard.classList.add("carrier")
-    const beginCard = document.createElement("beginCard")
+    const beginCard = document.createElement("div")
     beginCard.classList.add("carrier")
     endCard.appendChild(addButton)
     addButton.textContent="+"
 
     const removeButton = document.createElement("button")
-    removeButton.textContent="trash"
+    removeButton.textContent="🗑"
     removeButton.type="button"
     endCard.appendChild(removeButton)
     removeButton.addEventListener("click", ()=>{
@@ -64,6 +64,8 @@ function createNewCard(card){
         const answer = document.createElement("input")
         question.setAttribute("name","q"+cardIndex1+","+cardIndex2[cardIndex1])
         answer.setAttribute("name","a"+cardIndex1+","+cardIndex2[cardIndex1])
+        question.placeholder="Question"
+        answer.placeholder="Answer"
 
         newAttribute.appendChild(question)
         newAttribute.appendChild(answer)
@@ -88,7 +90,8 @@ function createNewCard(card){
 }
 
 addCardButton.addEventListener("click", e=>{
-    const newCard = document.createElement("card")
+    const newCard = document.createElement("div")
+    newCard.classList.add("carrier")
     cards.appendChild(newCard)
     createNewCard(newCard)
 })
@@ -101,7 +104,7 @@ setInterval(() => {
     for(let i =0;i<cardIndex1;i++){
         let j=0;
         let k =0;
-        const temp = cards.querySelectorAll(":scope > card")[i].querySelector(":scope > beginCard").children
+        const temp = cards.querySelectorAll(":scope > div")[i].querySelector(":scope > div").children
         for(let index=0;index<temp.length;index++){
             if(temp[index].querySelector(":scope > select").value=="E"){
                 j++;
