@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="686727fd-10dd-4d28-bf60-b0d3dccc668a" name="Changes" comment="hm?">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/create.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/create.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/flashcardsstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/flashcardsstyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create.html" afterDir="false" />
-    </list>
+    <list default="true" id="686727fd-10dd-4d28-bf60-b0d3dccc668a" name="Changes" comment="hm?" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,6 +110,17 @@
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hi" />
